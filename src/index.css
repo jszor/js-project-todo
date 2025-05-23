@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -61,19 +62,27 @@
   --shadow-shadow: var(--shadow);
   --font-weight-base: 500;
   --font-weight-heading: 700;
+  --font-base: DM Sans, "sans-serif";
+  --font-heading: DM Sans, "sans-serif";
 }
   
 @layer base {
   body {
-    @apply text-foreground font-base bg-background;
-    background-color: var(--background);
-
-    background-image: 
-      radial-gradient(circle, #ccc 1px, transparent 1px);
-    background-size: 20px 20px;
+    @apply text-foreground font-base bg-secondary-background;
   }
 
   h1, h2, h3, h4, h5, h6{
     @apply font-heading;
+    font-weight: var(--font-weight-heading)
+  }
+}
+
+@layer utilities {
+  .bg-grid-light {
+    background-image: 
+      repeating-linear-gradient(0deg, #e5e7eb 0, #e5e7eb 1px, transparent 1px, transparent 40px),
+      repeating-linear-gradient(90deg, #e5e7eb 0, #e5e7eb 1px, transparent 1px, transparent 40px);
+    background-size: 40px 40px;
+    background-position: 0 0;
   }
 }
