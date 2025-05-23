@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Mega:wght@100..900&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -66,6 +67,11 @@
 @layer base {
   body {
     @apply text-foreground font-base bg-background;
+    background-color: var(--background);
+
+    background-image: 
+      radial-gradient(circle, #ccc 1px, transparent 1px);
+    background-size: 20px 20px;
   }
 
   h1, h2, h3, h4, h5, h6{
