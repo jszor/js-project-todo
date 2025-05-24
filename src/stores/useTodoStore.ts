@@ -30,3 +30,5 @@ const useTodoStore = create<TodoState>((set) => ({
       ),
     })),
 }))
+
+export default useTodoStore
