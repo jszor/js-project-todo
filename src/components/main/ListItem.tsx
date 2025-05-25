@@ -15,13 +15,14 @@ const ListItem = ({ id, text, completed, onToggle, onDelete, deleteMode }: ListI
       <div className="w-6 flex-shrink-0 h-6 flex items-center justify-left ml-6">
         {!deleteMode ? (
         <Checkbox
+          className="hover:cursor-pointer"
           checked={completed}
           onCheckedChange={() => onToggle(id)}
         />
         ) : (
           <button
             onClick={() => onDelete(id)}
-            className="text-xl hover:pointer"
+            className="text-xl hover:cursor-pointer"
           >
             ✕
           </button>

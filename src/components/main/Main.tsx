@@ -27,22 +27,42 @@ const Main = () => {
     <div className="min-h-screen bg-secondary-background bg-grid-light flex flex-col items-center">
       <Card className="m-12 w-7/10 gap-3">
         <h2 className="text-xl flex justify-center mb-1">Tasks ({todos.length})</h2>
+        
+        <div className="flex flex-col gap-2 w-5/6 mx-auto">
+          
+          <Input
+            placeholder="E.g. clean the house"
+            className="w-full"
+            value={text}
+            onChange={(e) => setText(e.target.value)}
+          />
+          
+          <div className="flex gap-2 w-full">
 
-        <Input
-          placeholder="E.g. clean the house"
-          className="w-5/6 mx-auto"
-          value={text}
-          onChange={(e) => setText(e.target.value)}
-        />
-        <div className="flex gap-2 mx-5">
-          <Button className="mb-4 w-3/4" onClick={handleAdd}>Add (+)</Button>
-          <Button className="w-1/4 bg-orange-400" disabled={todos.length === 0} onClick={toggleDeleteMode}>{deleteMode ? "⬅" : "Del"}</Button>
+            <Button 
+              className="mb-4 w-3/4 hover:cursor-pointer" 
+              onClick={handleAdd}
+            >
+              Add (+)
+            </Button>
+
+            <Button 
+              className="w-1/4 bg-orange-400 hover:cursor-pointer" 
+              disabled={todos.length === 0} 
+              onClick={toggleDeleteMode}
+            >
+              {deleteMode ? "⬅" : "Del"}
+            </Button>
+
+          </div>
+
         </div>
+        
 
         {todos.length === 0 ? (
           <EmptyState />
         ) : (
-          <div className="space-y-2">
+          <div className="flex flex-col gap-2 w-5/6 mx-auto">
             {todos.map((todo) => (
               <ListItem
                 key={todo.id}
