@@ -5,16 +5,28 @@ type ListItemProps = {
   text: string;
   completed: boolean;
   onToggle: (id: number) => void;
+  onDelete: (id: number) => void;
+  deleteMode: boolean;
 };
 
-const ListItem = ({ id, text, completed, onToggle }: ListItemProps) => {
+const ListItem = ({ id, text, completed, onToggle, onDelete, deleteMode }: ListItemProps) => {
   return (
     <div className="flex flex-row items-center gap-4">
-      <Checkbox 
-        className="ml-6"
-        checked={completed}
-        onCheckedChange={() => onToggle(id)}
-      />
+      <div className="w-6 flex-shrink-0 h-6 flex items-center justify-left ml-6">
+        {!deleteMode ? (
+        <Checkbox
+          checked={completed}
+          onCheckedChange={() => onToggle(id)}
+        />
+        ) : (
+          <button
+            onClick={() => onDelete(id)}
+            className="text-xl hover:pointer"
+          >
+            ✕
+          </button>
+        )}
+      </div>
       <p className={`text-sm mr-6 text-left ${completed ? "line-through text-gray-400" : ""}`}>
         {text}
       </p>
