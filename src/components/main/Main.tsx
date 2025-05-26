@@ -24,7 +24,7 @@ const Main = () => {
   };
 
   return (
-    <div className="min-h-screen bg-secondary-background bg-grid-light flex flex-col items-center">
+    <div className="flex-grow bg-secondary-background bg-grid-light flex flex-col items-center">
       <Card className="m-12 w-7/10 gap-3 max-w-[600px]">
         <h2 className="text-xl flex justify-center mb-1">Tasks ({todos.length})</h2>
         
