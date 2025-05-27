@@ -40,18 +40,18 @@ const Main = () => {
           <div className="flex gap-2 w-full">
 
             <Button 
-              className="mb-4 w-3/4 hover:cursor-pointer" 
+              className="mb-4 w-2/3 xl:w-3/4 hover:cursor-pointer" 
               onClick={handleAdd}
             >
               Add (+)
             </Button>
 
             <Button 
-              className="w-1/4 bg-orange-400 hover:cursor-pointer" 
+              className="w-1/3 xl:w-1/4 bg-orange-400 hover:cursor-pointer" 
               disabled={todos.length === 0} 
               onClick={toggleDeleteMode}
             >
-              {deleteMode ? "⬅" : "Del"}
+              {deleteMode ? "⬅" : "Del (-)"}
             </Button>
 
           </div>
