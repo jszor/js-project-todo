@@ -28,7 +28,7 @@ const ListItem = ({ id, text, completed, onToggle, onDelete, deleteMode }: ListI
           </button>
         )}
       </div>
-      <p className={`text-sm mr-6 text-left ${completed ? "line-through text-gray-400" : ""}`}>
+      <p className={`text-sm mr-6 break-word text-left ${completed ? "line-through text-gray-400" : ""}`}>
         {text}
       </p>
     </div>
